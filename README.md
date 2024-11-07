@@ -1,4 +1,4 @@
-# Uni-Eventos Backend
+# Uni-Eventos
 
 ## Descripción
 
@@ -23,5 +23,5 @@ Uni-Eventos es una plataforma full-stack para una tienda de eventos y boletas. E
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/ElJuanchito/uniEventos.git
-cd uniEventos
+git clone https://github.com/ElJuanchito/uni-eventos.git
+cd uni-eventos
