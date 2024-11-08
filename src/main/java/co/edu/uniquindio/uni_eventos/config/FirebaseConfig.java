@@ -17,7 +17,8 @@ public class FirebaseConfig {
 
     @Bean
     public FirebaseApp intializeFirebase() throws IOException {
-        InputStream serviceAccount = new ClassPathResource("firebase-key.json").getInputStream();
+        String filePath = "/etc/secrets/firebase-key.json";
+        FileInputStream serviceAccount = new FileInputStream(filePath);
 
 
         FirebaseOptions options = FirebaseOptions.builder()
