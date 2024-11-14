@@ -132,7 +132,6 @@ public class AccountServiceImpl implements AccountService {
         account.getUser().setName(accountDTO.name());
         account.getUser().setAddress(accountDTO.address());
         account.getUser().setPhone(accountDTO.phone());
-        account.setPassword(accountDTO.password());
 
         accountRepository.save(account);
     }
