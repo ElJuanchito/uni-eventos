@@ -8,9 +8,8 @@ group = 'co.edu.uniquindio'
 version = '1.0'
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
 }
 
 configurations {
@@ -44,8 +43,4 @@ dependencies {
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.6'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
 }
