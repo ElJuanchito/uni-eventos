@@ -1,9 +1,6 @@
 package co.edu.uniquindio.uni_eventos.services;
 
-import co.edu.uniquindio.uni_eventos.dtos.event.CreateEventDTO;
-import co.edu.uniquindio.uni_eventos.dtos.event.FilterEventDTO;
-import co.edu.uniquindio.uni_eventos.dtos.event.EventInfoDTO;
-import co.edu.uniquindio.uni_eventos.dtos.event.UpdateEventDTO;
+import co.edu.uniquindio.uni_eventos.dtos.event.*;
 import co.edu.uniquindio.uni_eventos.entities.Event;
 import co.edu.uniquindio.uni_eventos.exceptions.EventNotExistsException;
 
@@ -20,4 +17,7 @@ public interface EventService {
     Event getEventById(String id) throws EventNotExistsException;
 
     void updateSectionCapacity(String id, String sectionName, Integer quantity) throws Exception;
+
+    List<String> getTypes() throws Exception;
+    List<String> getCities() throws Exception;
 }

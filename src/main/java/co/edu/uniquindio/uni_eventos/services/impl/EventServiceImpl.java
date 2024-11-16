@@ -21,6 +21,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -108,6 +110,28 @@ public class EventServiceImpl implements EventService {
         event.getSections().add(index, section);
 
         eventRepository.save(event);
+    }
+
+    @Override
+    public List<String> getTypes() throws Exception {
+        return eventRepository
+                .findAll()
+                .stream()
+                .map((e) -> e.getType().name())
+                .collect(Collectors.toSet())
+                .stream()
+                .toList();
+    }
+
+    @Override
+    public List<String> getCities() throws Exception {
+        return eventRepository
+                .findAll()
+                .stream()
+                .map(Event::getCity)
+                .collect(Collectors.toSet())
+                .stream()
+                .toList();
     }
 
     private Section toSection(CreateSectionDTO dto){
